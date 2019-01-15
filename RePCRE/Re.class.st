@@ -431,7 +431,7 @@ Accordingly, RePattern permits you to generate and keep 'compiled pattern object
 
 which answers 
 
-	an Re('\w+ ')
+	an Re('\w+')
 
 and the resulting pattern can be used wherever a pattern string can be used, except that no recompilation or table lookup occurs. The following: 
 
@@ -508,10 +508,10 @@ A non-grouping version of regular parentheses. Matches whatever regular expressi
 A comment; the contents of the parentheses are simply ignored. 
 
 (?=...) 
-Matches if ... matches next, but doesn't consume any of the string. This is called a lookahead assertion. For example, Isaac (?=Asimov) will match 'Isaac ' only if it's followed by 'Asimov'. 
+Matches if ... matches next, but doesn't consume any of the string. This is called a lookahead assertion. For example, Isaac (?=Asimov) will match 'Isaac' only if it's followed by 'Asimov'. 
 
 (?!...) 
-Matches if ... doesn't match next. This is a negative lookahead assertion. For example, Isaac (?!Asimov) will match 'Isaac ' only if it's not followed by 'Asimov'. 
+Matches if ... doesn't match next. This is a negative lookahead assertion. For example, Isaac (?!Asimov) will match 'Isaac' only if it's not followed by 'Asimov'. 
 
 (?<=...) 
 Matches if ... matches, but doesn't consume any of the string. This is called a lookbehind assertion. For example, (?<=foo|fooey)bar will match 'bar' only if it's preceded by 'foo' or 'fooey'. All lookbehinds must have some fixed length, although alternatives need not be of the same length, as in the example. 
