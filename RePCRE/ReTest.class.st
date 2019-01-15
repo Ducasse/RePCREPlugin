@@ -7,7 +7,12 @@ Class {
 	#category : #RePCRE
 }
 
-{ #category : #newTestSuite3 }
+{ #category : #utils }
+ReTest >> compileIsNotOK [
+	self should: [ re compile ] raise: Error
+]
+
+{ #category : #utils }
 ReTest >> compileIsOK [
 	self shouldnt: [ re compile ] raise: Error
 ]
@@ -3404,7 +3409,7 @@ ReTest >> testNewSuite2test10 [
 	| re |
 	re := Re on: '(?X)ab\gdef'.
 	re beExtra.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3437,91 +3442,91 @@ ReTest >> testNewSuite2test102 [
 ReTest >> testNewSuite2test103 [
 	| re |
 	re := Re on: 'a[b-a]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test104 [
 	| re |
 	re := Re on: 'a[]b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test105 [
 	| re |
 	re := Re on: 'a['.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test106 [
 	| re |
 	re := Re on: '*a'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test107 [
 	| re |
 	re := Re on: '(*)b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test108 [
 	| re |
 	re := Re on: 'abc)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test109 [
 	| re |
 	re := Re on: '(abc'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test11 [
 	| re |
 	re := Re on: 'x{5,4}'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test110 [
 	| re |
 	re := Re on: 'a**'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test111 [
 	| re |
 	re := Re on: ')('.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test112 [
 	| re |
 	re := Re on: '\1'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test113 [
 	| re |
 	re := Re on: '\2'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test114 [
 	| re |
 	re := Re on: '(a)|\2'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3529,7 +3534,7 @@ ReTest >> testNewSuite2test115 [
 	| re |
 	re := Re on: 'a[b-a]'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3537,7 +3542,7 @@ ReTest >> testNewSuite2test116 [
 	| re |
 	re := Re on: 'a[]b'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3545,7 +3550,7 @@ ReTest >> testNewSuite2test117 [
 	| re |
 	re := Re on: 'a['.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3553,7 +3558,7 @@ ReTest >> testNewSuite2test118 [
 	| re |
 	re := Re on: '*a'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3561,14 +3566,14 @@ ReTest >> testNewSuite2test119 [
 	| re |
 	re := Re on: '(*)b'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test12 [
 	| re |
 	re := Re on: 'z{65536}'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3576,7 +3581,7 @@ ReTest >> testNewSuite2test120 [
 	| re |
 	re := Re on: 'abc)'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3584,7 +3589,7 @@ ReTest >> testNewSuite2test121 [
 	| re |
 	re := Re on: '(abc'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3592,7 +3597,7 @@ ReTest >> testNewSuite2test122 [
 	| re |
 	re := Re on: 'a**'.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3600,98 +3605,98 @@ ReTest >> testNewSuite2test123 [
 	| re |
 	re := Re on: ')('.
 	re beNotCaseSensitive.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test124 [
 	| re |
 	re := Re on: ':(?:'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test125 [
 	| re |
 	re := Re on: '(?<%)b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test126 [
 	| re |
 	re := Re on: 'a(?{)b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test127 [
 	| re |
 	re := Re on: 'a(?{{})b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test128 [
 	| re |
 	re := Re on: 'a(?{}})b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test129 [
 	| re |
 	re := Re on: 'a(?{"{"})b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test13 [
 	| re |
 	re := Re on: '[abcd'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test130 [
 	| re |
 	re := Re on: 'a(?{"{"}})b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test131 [
 	| re |
 	re := Re on: '(?(1?)a|b)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test132 [
 	| re |
 	re := Re on: '(?(1)a|b|c)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test133 [
 	| re |
 	re := Re on: '[a[:xyz:'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test134 [
 	| re |
 	re := Re on: '(?<=x+)y'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test135 [
 	| re |
 	re := Re on: 'a{37,17}'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3752,7 +3757,7 @@ ReTest >> testNewSuite2test139 [
 ReTest >> testNewSuite2test14 [
 	| re |
 	re := Re on: '[\B]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -3927,7 +3932,7 @@ ReTest >> testNewSuite2test149 [
 ReTest >> testNewSuite2test15 [
 	| re |
 	re := Re on: '[z-a]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4038,7 +4043,7 @@ ReTest >> testNewSuite2test159 [
 ReTest >> testNewSuite2test16 [
 	| re |
 	re := Re on: '^*'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4172,7 +4177,7 @@ ReTest >> testNewSuite2test169 [
 ReTest >> testNewSuite2test17 [
 	| re |
 	re := Re on: '(abc'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4249,7 +4254,7 @@ ReTest >> testNewSuite2test179 [
 ReTest >> testNewSuite2test18 [
 	| re |
 	re := Re on: '(?# abc'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4326,7 +4331,7 @@ ReTest >> testNewSuite2test189 [
 ReTest >> testNewSuite2test19 [
 	| re |
 	re := Re on: '(?z)abc'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4802,21 +4807,21 @@ ReTest >> testNewSuite2test236 [
 ReTest >> testNewSuite2test237 [
 	| re |
 	re := Re on: '[[.ch.]]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test238 [
 	| re |
 	re := Re on: '[[=ch=]]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test239 [
 	| re |
 	re := Re on: '[[:rhubarb:]]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4872,14 +4877,14 @@ ReTest >> testNewSuite2test242 [
 ReTest >> testNewSuite2test243 [
 	| re |
 	re := Re on: '[\200-\410]'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test244 [
 	| re |
 	re := Re on: '^(?(0)f|b)oo'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -4989,14 +4994,14 @@ ReTest >> testNewSuite2test27 [
 ReTest >> testNewSuite2test28 [
 	| re |
 	re := Re on: '(ab\2)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test29 [
 	| re |
 	re := Re on: '{4,5}abc'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5074,7 +5079,7 @@ ReTest >> testNewSuite2test32 [
 ReTest >> testNewSuite2test33 [
 	| re |
 	re := Re on: '(a)(b)(c)(d)(e)\6'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5102,7 +5107,7 @@ ReTest >> testNewSuite2test35 [
 ReTest >> testNewSuite2test36 [
 	| re |
 	re := Re on: 'ab(?z)cd'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5226,7 +5231,7 @@ ReTest >> testNewSuite2test46 [
 	| re |
 	re := Re on: '(abc)\2'.
 	re beStrangeOption.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5242,14 +5247,14 @@ ReTest >> testNewSuite2test47 [
 ReTest >> testNewSuite2test48 [
 	| re |
 	re := Re on: ')'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test49 [
 	| re |
 	re := Re on: 'a[]b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5341,7 +5346,7 @@ ReTest >> testNewSuite2test58 [
 ReTest >> testNewSuite2test59 [
 	| re |
 	re := Re on: '(?<=a+)b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5355,14 +5360,14 @@ ReTest >> testNewSuite2test6 [
 ReTest >> testNewSuite2test60 [
 	| re |
 	re := Re on: '(?<=aaa|b{0,3})b'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test61 [
 	| re |
 	re := Re on: '(?<!(foo)a\1)bar'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5451,42 +5456,42 @@ ReTest >> testNewSuite2test71 [
 ReTest >> testNewSuite2test72 [
 	| re |
 	re := Re on: '(a)(?(1)a|b|c)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test73 [
 	| re |
 	re := Re on: '(?(?=a)a|b|c)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test74 [
 	| re |
 	re := Re on: '(?(1a)'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test75 [
 	| re |
 	re := Re on: '(?(?i))'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test76 [
 	| re |
 	re := Re on: '(?(abc))'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test77 [
 	| re |
 	re := Re on: '(?(?<ab))'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5653,7 +5658,7 @@ ReTest >> testNewSuite2test9 [
 	| re |
 	re := Re on: 'ab\gdef'.
 	re beExtra.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
@@ -5688,21 +5693,21 @@ ReTest >> testNewSuite2test91 [
 ReTest >> testNewSuite2test92 [
 	| re |
 	re := Re on: '(?<=ab(c+)d)ef'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test93 [
 	| re |
 	re := Re on: '(?<=ab(?<=c+)d)ef'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
 ReTest >> testNewSuite2test94 [
 	| re |
 	re := Re on: '(?<=ab(c|de)f)g'.
-	self should: [ re compile ] raise: Error
+	self compileIsNotOK
 ]
 
 { #category : #newTestSuite2 }
