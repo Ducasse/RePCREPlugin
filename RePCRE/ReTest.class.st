@@ -5875,7 +5875,7 @@ ReTest >> testNewSuite3test109 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test11 [
-	| re re2 |
+	
 	re := Re on: '(?>a+)b'.
 	self compileIsOK.
 	self assert: (re search: 'aaab') isNil not
@@ -5883,7 +5883,7 @@ ReTest >> testNewSuite3test11 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test110 [
-	| re re2 |
+	
 	re := Re on: 'a\sb'.
 	self compileIsOK.
 	self assert: (re search: 'a b') isNil not
@@ -5891,7 +5891,7 @@ ReTest >> testNewSuite3test110 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test111 [
-	| re |
+	
 	re := Re on: 'a\Sb'.
 	self compileIsOK.
 	self assert: (re search: 'a-b') isNil not.
@@ -5900,7 +5900,7 @@ ReTest >> testNewSuite3test111 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test112 [
-	| re re2 |
+	
 	re := Re on: '\d'.
 	self compileIsOK.
 	self assert: (re search: '1') isNil not
@@ -5908,7 +5908,7 @@ ReTest >> testNewSuite3test112 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test113 [
-	| re |
+
 	re := Re on: '\D'.
 	self compileIsOK.
 	self assert: (re search: '-') isNil not.
@@ -5917,7 +5917,7 @@ ReTest >> testNewSuite3test113 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test114 [
-	| re re2 |
+	
 	re := Re on: '[\w]'.
 	self compileIsOK.
 	self assert: (re search: 'a') isNil not
@@ -5925,7 +5925,7 @@ ReTest >> testNewSuite3test114 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test115 [
-	| re |
+	
 	re := Re on: '[\W]'.
 	self compileIsOK.
 	self assert: (re search: '-') isNil not.
