@@ -19,7 +19,7 @@ ReTest >> compileIsOK [
 
 { #category : #newTestSuite4 }
 ReTest >> testNewSuit4test1 [
-	| re |
+
 	re := Re on: '^[\w]+'.
 	self compileIsOK.
 	self assert: (re search: 'École') isNil
@@ -27,7 +27,7 @@ ReTest >> testNewSuit4test1 [
 
 { #category : #newTestSuite4 }
 ReTest >> testNewSuit4test10 [
-	| re |
+
 	re := Re on: '(.+)\b(.+)'.
 	self compileIsOK.
 	self assert: (re search: 'École') isNil not
@@ -35,7 +35,7 @@ ReTest >> testNewSuit4test10 [
 
 { #category : #newTestSuite4 }
 ReTest >> testNewSuit4test12 [
-	| re |
+	
 	re := Re on: 'École'.
 	re beNotCaseSensitive.
 	self compileIsOK.
@@ -45,14 +45,14 @@ ReTest >> testNewSuit4test12 [
 
 { #category : #newTestSuite4 }
 ReTest >> testNewSuit4test18 [
-	| re |
+	
 	re := Re on: ' End of testinput4 '.
 	self compileIsOK
 ]
 
 { #category : #newTestSuite4 }
 ReTest >> testNewSuit4test3 [
-	| re |
+
 	re := Re on: '^[\w]+'.
 	self compileIsOK.
 	self assert: (re search: 'École') isNil
@@ -60,7 +60,7 @@ ReTest >> testNewSuit4test3 [
 
 { #category : #newTestSuite4 }
 ReTest >> testNewSuit4test4 [
-	| re |
+
 	re := Re on: '^[\W]+'.
 	self compileIsOK.
 	self assert: (re search: 'École') isNil not
@@ -5765,7 +5765,7 @@ ReTest >> testNewSuite2test99 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test1 [
-	| re re2 |
+
 	re := Re on: '(?<!bar)foo'.
 	self compileIsOK.
 	self assert: (re search: 'foo') isNil not.
@@ -5786,7 +5786,7 @@ ReTest >> testNewSuite3test10 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test100 [
-	| re re2 |
+
 	re := Re on: 'a[^-b]c'.
 	self compileIsOK.
 	self assert: (re search: 'adc') isNil not
@@ -5794,7 +5794,7 @@ ReTest >> testNewSuite3test100 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test101 [
-	| re |
+
 	re := Re on: 'a[^]b]c'.
 	self compileIsOK.
 	self assert: (re search: 'adc') isNil not.
@@ -5804,7 +5804,7 @@ ReTest >> testNewSuite3test101 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test102 [
-	| re re2 |
+	
 	re := Re on: '\ba\b'.
 	self compileIsOK.
 	self assert: (re search: 'a-') isNil not.
@@ -5814,7 +5814,7 @@ ReTest >> testNewSuite3test102 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test103 [
-	| re re2 |
+
 	re := Re on: '\by\b'.
 	self compileIsOK.
 	self assert: (re search: 'xy') isNil.
@@ -5824,7 +5824,7 @@ ReTest >> testNewSuite3test103 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test104 [
-	| re re2 |
+
 	re := Re on: '\Ba\B'.
 	self compileIsOK.
 	self assert: (re search: 'a-') isNil.
@@ -5834,7 +5834,7 @@ ReTest >> testNewSuite3test104 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test105 [
-	| re re2 |
+
 	re := Re on: '\By\b'.
 	self compileIsOK.
 	self assert: (re search: 'xy') isNil not
@@ -5842,7 +5842,7 @@ ReTest >> testNewSuite3test105 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test106 [
-	| re re2 |
+
 	re := Re on: '\by\B'.
 	self compileIsOK.
 	self assert: (re search: 'yz') isNil not
@@ -5850,7 +5850,7 @@ ReTest >> testNewSuite3test106 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test107 [
-	| re re2 |
+
 	re := Re on: '\By\B'.
 	self compileIsOK.
 	self assert: (re search: 'xyz') isNil not
@@ -5858,7 +5858,7 @@ ReTest >> testNewSuite3test107 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test108 [
-	| re re2 |
+
 	re := Re on: '\w'.
 	self compileIsOK.
 	self assert: (re search: 'a') isNil not
@@ -5866,7 +5866,7 @@ ReTest >> testNewSuite3test108 [
 
 { #category : #newTestSuite3 }
 ReTest >> testNewSuite3test109 [
-	| re |
+
 	re := Re on: '\W'.
 	self compileIsOK.
 	self assert: (re search: '-') isNil not.
